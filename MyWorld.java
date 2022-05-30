@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Samantha Ly
+ * @version May-June 2022
  */
 public class MyWorld extends World
 {
@@ -16,6 +16,9 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(450, 216, 1); // adjusted dimensions to be the same as the image for the background
+        
+        Mario m = new Mario();
+        addObject(m, 300, 350);
     }
 }
