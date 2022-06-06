@@ -16,9 +16,9 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(450, 216, 1); // adjusted dimensions to be the same as the image for the background
+        super(600, 400, 1); // adjusted dimensions to be the same as the image for the background
         
-        Mario m = new Mario();
-        addObject(m, 300, 350);
+        Red red = new Red();
+        addObject(red, 300, 337);
     }
 }
