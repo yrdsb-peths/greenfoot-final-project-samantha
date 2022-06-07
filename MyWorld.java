@@ -19,6 +19,6 @@ public class MyWorld extends World
         super(600, 400, 1); // adjusted dimensions to be the same as the image for the background
         
         Red red = new Red();
-        addObject(red, 300, 337);
+        addObject(red, 300, 330);
     }
 }

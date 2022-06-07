@@ -17,8 +17,10 @@ public class Red extends Actor
         for(int i=0; i<runRight.length; i++)
         {
             runRight[i] = new GreenfootImage("images/run/run" + i + ".png");
+            runRight[i].scale(50,35);
             runLeft[i] = new GreenfootImage("images/run/run" + i + ".png");
             runLeft[i].mirrorHorizontally();
+            runLeft[i].scale(50,35);
         }
         
         setImage(runRight[0]); // inital image

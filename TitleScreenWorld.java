@@ -22,6 +22,25 @@ public class TitleScreenWorld extends World
         Title title = new Title();
         addObject(title, getWidth()/2, 100);
         
+        // "press enter to start"
+        StartText start = new StartText();
+        addObject(start, getWidth()/2, 280);
         
+        // red (mario)
+        TitleScreenRed red = new TitleScreenRed();
+        addObject(red, 170, 330);
+        
+        // green (luigi)
+        TitleScreenGreen green = new TitleScreenGreen();
+        addObject(green, 430, 330);
+    }
+    
+    public void act()
+    {
+        if(Greenfoot.isKeyDown("enter"))
+        {
+            MyWorld world = new MyWorld();
+            Greenfoot.setWorld(world);
+        }
     }
 }
