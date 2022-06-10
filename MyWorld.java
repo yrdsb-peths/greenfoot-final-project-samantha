@@ -8,11 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    boolean mushroom = true;
+    
+    // constructor
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -20,5 +18,15 @@ public class MyWorld extends World
         
         Red red = new Red();
         addObject(red, 300, 330);
+        
+        spawnMushroom();
+    }
+    
+    public void spawnMushroom()
+    {
+        int x = 600;
+        int y = 334; 
+        Mushroom mushroom = new Mushroom();
+        addObject(mushroom, x, y);
     }
 }

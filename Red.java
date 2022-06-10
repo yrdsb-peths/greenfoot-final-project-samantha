@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Red extends Actor
 {
-    // for running
+    // for running animation
     GreenfootImage[] runRight = new GreenfootImage[4];
     GreenfootImage[] runLeft = new GreenfootImage[4];
     
@@ -67,11 +67,17 @@ public class Red extends Actor
             animateRun();
         }
         
-        //jumping
+        // jumping
         fall();
         if(Greenfoot.isKeyDown("space") && getY() > getWorld().getHeight()-80)
         {
             jump();
+        }
+        
+        // gets hit by mushroom
+        if(isTouching(Mushroom.class))
+        {
+            removeTouching(Mushroom.class);
         }
     }
     
