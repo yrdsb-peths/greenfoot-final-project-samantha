@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    boolean mushroom = true;
+    public static int time = 1000;
     
     // constructor
     public MyWorld()
@@ -20,6 +20,16 @@ public class MyWorld extends World
         addObject(red, 300, 330);
         
         spawnMushroom();
+    }
+    
+    public void act()
+    {
+        time--;
+        showText("TIME: " + time, 50, 25);
+        if(time<=0)
+        {
+            Greenfoot.stop();
+        }
     }
     
     public void spawnMushroom()

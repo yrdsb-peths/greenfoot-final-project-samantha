@@ -41,6 +41,7 @@ public class Mushroom extends Actor
         if(getX() < 5)
         {
             world.removeObject(this);
+            world.spawnMushroom();
         }
     }
 }

@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Red extends Actor
 {
+    private boolean alive = true;
+    
     // for running animation
-    GreenfootImage[] runRight = new GreenfootImage[4];
-    GreenfootImage[] runLeft = new GreenfootImage[4];
+    GreenfootImage[] runRight = new GreenfootImage[6];
+    GreenfootImage[] runLeft = new GreenfootImage[6];
     
     private boolean isFacingRight = true; // initial position
     
@@ -20,16 +22,20 @@ public class Red extends Actor
     
     public Red()
     {
+        setImage("images/RedIdle.png");
+        GreenfootImage idle = getImage();
+        idle.scale(50,35);
+        
         // running
         for(int i=0; i<runRight.length; i++)
         {
-            runRight[i] = new GreenfootImage("images/run/run" + i + ".png");
+            runRight[i] = new GreenfootImage("images/RedWalk/RedWalk" + i + ".png");
             runRight[i].scale(50,35);
-            runLeft[i] = new GreenfootImage("images/run/run" + i + ".png");
+            runLeft[i] = new GreenfootImage("images/RedWalk/RedWalk" + i + ".png");
             runLeft[i].mirrorHorizontally();
             runLeft[i].scale(50,35);
         }
-        setImage(runRight[0]); // inital image
+        //setImage("images/RedIdle.png"); // inital image
         
         // jumping
         velocity = 0;
@@ -54,13 +60,13 @@ public class Red extends Actor
     public void act()
     {
         // running
-        if(Greenfoot.isKeyDown("left"))
+        if(alive && Greenfoot.isKeyDown("left"))
         {
             isFacingRight = false;
             move(-3);
             animateRun();
         }
-        else if(Greenfoot.isKeyDown("right"))
+        else if(alive && Greenfoot.isKeyDown("right"))
         {
             isFacingRight = true;
             move(3);
@@ -69,7 +75,7 @@ public class Red extends Actor
         
         // jumping
         fall();
-        if(Greenfoot.isKeyDown("space") && getY() > getWorld().getHeight()-80)
+        if(alive && Greenfoot.isKeyDown("space") && getY() > getWorld().getHeight()-80)
         {
             jump();
         }
@@ -77,7 +83,9 @@ public class Red extends Actor
         // gets hit by mushroom
         if(isTouching(Mushroom.class))
         {
-            removeTouching(Mushroom.class);
+            //removeTouching(Mushroom.class);
+            alive = false;
+            setImage("images/RedDead.png");
         }
     }
     
@@ -97,5 +105,8 @@ public class Red extends Actor
     public void jump()
     {
         velocity = -15;
+        setImage("images/RedJump.png");
+        GreenfootImage jump = getImage();
+        jump.scale(27,30);
     }
 }
