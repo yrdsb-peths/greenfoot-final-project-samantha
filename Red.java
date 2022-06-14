@@ -59,23 +59,10 @@ public class Red extends Actor
     
     public void act()
     {
-        // running
-        if(alive && Greenfoot.isKeyDown("left"))
-        {
-            isFacingRight = false;
-            move(-3);
-            animateRun();
-        }
-        else if(alive && Greenfoot.isKeyDown("right"))
-        {
-            isFacingRight = true;
-            move(3);
-            animateRun();
-        }
+        move();
         
-        // jumping
         fall();
-        if(alive && Greenfoot.isKeyDown("space") && getY() > getWorld().getHeight()-80)
+        if(alive && Greenfoot.isKeyDown("space") && isOnSolidGround())
         {
             jump();
         }
@@ -89,16 +76,41 @@ public class Red extends Actor
         }
     }
     
+    public void move()
+    {
+        if(alive && Greenfoot.isKeyDown("left"))
+        {
+            isFacingRight = false;
+            move(-3);
+            animateRun();
+        }
+        else if(alive && Greenfoot.isKeyDown("right"))
+        {
+            isFacingRight = true;
+            move(3);
+            animateRun();
+        }
+    }
+    
     public void fall()
     {
         setLocation(getX(), getY()+velocity);
-        if(getY() > getWorld().getHeight()-80)
+        if(isOnSolidGround())
         {
-            velocity = 0;
+            velocity = 0; //doesn't fall on ground
+            
+            /*
+            // so that character doesn't go into the platform
+            while(isOnSolidGround())
+            {
+                setLocation(getX(), getY()-1);
+            }
+            setLocation(getX(), getY()+1);
+            */
         }
         else
         {
-            velocity += GRAVITY;
+            velocity += GRAVITY; // falls when not on ground
         }
     }
     
@@ -109,4 +121,55 @@ public class Red extends Actor
         GreenfootImage jump = getImage();
         jump.scale(27,30);
     }
+    
+    public boolean isOnSolidGround()
+    {
+        boolean isOnGround = false;
+        if(getY() > getWorld().getHeight()-80)
+        {
+            isOnGround = true;
+        }
+        
+        // check if on a platform
+        int imageWidth = getImage().getWidth();
+        int imageHeight = getImage().getHeight();
+        if(getOneObjectAtOffset(imageWidth/-2, imageHeight/2, Brick.class) != null || getOneObjectAtOffset(imageWidth/2, imageHeight/2, Brick.class) != null)
+        {
+            isOnGround = true;
+        }
+        
+        return isOnGround;
+    }
+    
+    /*
+    public boolean canMoveLeft()
+    {
+        boolean canMoveLeft = true;
+        
+        //check if hit against LEFT side of platform
+        int imageWidth = getImage().getWidth();
+        int imageHeight = getImage().getHeight();
+        if(getOneObjectAtOffset((imageWidth/-2)-3, imageHeight/-2, Brick.class) != null || getOneObjectAtOffset((imageWidth/-2)-3, (imageHeight/2)-1, Brick.class) != null)
+        {
+            canMoveLeft = false;
+        }
+        
+        return canMoveLeft;
+    }
+    
+    public boolean canMoveRight()
+    {
+        boolean canMoveRight = true;
+        
+        //check if hit against RIGHT side of platform
+        int imageWidth = getImage().getWidth();
+        int imageHeight = getImage().getHeight();
+        if(getOneObjectAtOffset((imageWidth/2)+3, imageHeight/-2, Brick.class) != null || getOneObjectAtOffset((imageWidth/2)+3, (imageHeight/2)-1, Brick.class) != null)
+        {
+            canMoveRight = false;
+        }
+        
+        return canMoveRight;
+    }
+    */
 }
