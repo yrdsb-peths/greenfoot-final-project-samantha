@@ -1,16 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The triple bush in the background
+ * The small hill in the background
  * 
  * @author Samantha Ly
  * @version June 2022
  */
-public class BushTriple extends Actor
+public class HillSmall extends Actor
 {
     public void act()
     {
-        // bush moves as player moves
+        // hill moves as player moves
         if(Greenfoot.isKeyDown("left"))
         {
             move(3);
@@ -20,14 +20,14 @@ public class BushTriple extends Actor
             move(-3);
         }
         
-        // when bush go off screen, a "new" bush appears in the scenery
+        // when hill go off screen, a "new" hill appears in the scenery
         if(getX()==0)
         {
-            setLocation(getWorld().getWidth()-1,332);
+            setLocation(getWorld().getWidth()-1,331);
         }
         else if(getX()==getWorld().getWidth()-1)
         {
-            setLocation(0,332);
+            setLocation(0,331);
         }
     }
 }

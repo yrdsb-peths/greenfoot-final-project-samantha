@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Mushroom here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Samantha Ly
+ * @version June 2022
  */
 public class Mushroom extends Actor
 {
@@ -36,6 +36,21 @@ public class Mushroom extends Actor
         setLocation(x - 2, y);
         
         animateWalk();
+        
+        /*
+         * adjustments to make it look like the mushroom is
+         * walking at a constant speed because the moving
+         * background creates the illusion that the
+         * mushroom's speed changes
+         */
+        if(Greenfoot.isKeyDown("left"))
+        {
+            setLocation(x-1,y);
+        }
+        else if(Greenfoot.isKeyDown("right"))
+        {
+            setLocation(x-5,y);
+        }
         
         MyWorld world = (MyWorld) getWorld();
         if(getX() < 5)

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Coin
+comment0.text=\r\n\ Coins\ that\ can\ be\ collected\ by\ the\ player\r\n\ \r\n\ @author\ Samantha\ Ly\r\n\ @version\ June\ 2022\r\n
+comment1.params=
+comment1.target=Coin()
+comment2.params=
+comment2.target=void\ animateSpin()
+comment2.text=\r\n\ This\ method\ animates\ the\ coin\ to\ spin\r\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Coin\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=4

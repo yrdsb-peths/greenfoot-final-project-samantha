@@ -1,19 +1,33 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BushSingle here.
+ * The singular bush in the background
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Samantha Ly 
+ * @version June 2022
  */
 public class BushSingle extends Actor
 {
-    /**
-     * Act - do whatever the BushSingle wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
-        // Add your action code here.
+        // bush moves as player moves
+        if(Greenfoot.isKeyDown("left"))
+        {
+            move(3);
+        }
+        else if(Greenfoot.isKeyDown("right"))
+        {
+            move(-3);
+        }
+        
+        // when bush go off screen, a "new" bush appears in the scenery
+        if(getX()==0)
+        {
+            setLocation(getWorld().getWidth()-1,332);
+        }
+        else if(getX()==getWorld().getWidth()-1)
+        {
+            setLocation(0,332);
+        }
     }
 }

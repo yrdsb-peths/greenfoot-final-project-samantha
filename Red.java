@@ -1,18 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Mario here.
+ * The Mario class is the character played by the player
  * 
  * @author Samantha Ly
  * @version May-June 2022
  */
 public class Red extends Actor
 {
-    private boolean alive = true;
+    public boolean alive = true;
     
     // for running animation
     GreenfootImage[] runRight = new GreenfootImage[6];
     GreenfootImage[] runLeft = new GreenfootImage[6];
+    int curIndex = 0;
     
     private boolean isFacingRight = true; // initial position
     
@@ -37,12 +38,37 @@ public class Red extends Actor
         }
         //setImage("images/RedIdle.png"); // inital image
         
-        // jumping
         velocity = 0;
     }
     
-    // animation for running
-    int curIndex = 0;
+    public void act()
+    {
+        move();
+        
+        fall();
+        if(alive && Greenfoot.isKeyDown("space") && isOnSolidGround())
+        {
+            jump();
+        }
+        
+        MyWorld world = new MyWorld();
+        if(isTouching(Coin.class))
+        {
+            removeTouching(Coin.class);
+            world.score += 5;
+        }
+        
+        // gets hit by mushroom
+        if(isTouching(Mushroom.class))
+        {
+            alive = false;
+            setImage("images/RedDead.png");
+        }
+    }
+
+    /**
+     * This method animates the character when running
+     */
     public void animateRun()
     {
         if(isFacingRight)
@@ -57,25 +83,9 @@ public class Red extends Actor
         curIndex %= runRight.length;
     }
     
-    public void act()
-    {
-        move();
-        
-        fall();
-        if(alive && Greenfoot.isKeyDown("space") && isOnSolidGround())
-        {
-            jump();
-        }
-        
-        // gets hit by mushroom
-        if(isTouching(Mushroom.class))
-        {
-            //removeTouching(Mushroom.class);
-            alive = false;
-            setImage("images/RedDead.png");
-        }
-    }
-    
+    /**
+     * This method holds the controls for moving the character
+     */
     public void move()
     {
         if(alive && Greenfoot.isKeyDown("left"))
@@ -92,21 +102,15 @@ public class Red extends Actor
         }
     }
     
+    /**
+     * This method makes the character fall when they are above the ground and accompanies the jump method
+     */
     public void fall()
     {
         setLocation(getX(), getY()+velocity);
         if(isOnSolidGround())
         {
             velocity = 0; //doesn't fall on ground
-            
-            /*
-            // so that character doesn't go into the platform
-            while(isOnSolidGround())
-            {
-                setLocation(getX(), getY()-1);
-            }
-            setLocation(getX(), getY()+1);
-            */
         }
         else
         {
@@ -114,6 +118,9 @@ public class Red extends Actor
         }
     }
     
+    /**
+     * This method allows for the player to jump
+     */
     public void jump()
     {
         velocity = -15;
@@ -122,6 +129,9 @@ public class Red extends Actor
         jump.scale(27,30);
     }
     
+    /**
+     * This method checks if the character is on solid ground
+     */
     public boolean isOnSolidGround()
     {
         boolean isOnGround = false;
@@ -130,46 +140,6 @@ public class Red extends Actor
             isOnGround = true;
         }
         
-        // check if on a platform
-        int imageWidth = getImage().getWidth();
-        int imageHeight = getImage().getHeight();
-        if(getOneObjectAtOffset(imageWidth/-2, imageHeight/2, Brick.class) != null || getOneObjectAtOffset(imageWidth/2, imageHeight/2, Brick.class) != null)
-        {
-            isOnGround = true;
-        }
-        
         return isOnGround;
     }
-    
-    /*
-    public boolean canMoveLeft()
-    {
-        boolean canMoveLeft = true;
-        
-        //check if hit against LEFT side of platform
-        int imageWidth = getImage().getWidth();
-        int imageHeight = getImage().getHeight();
-        if(getOneObjectAtOffset((imageWidth/-2)-3, imageHeight/-2, Brick.class) != null || getOneObjectAtOffset((imageWidth/-2)-3, (imageHeight/2)-1, Brick.class) != null)
-        {
-            canMoveLeft = false;
-        }
-        
-        return canMoveLeft;
-    }
-    
-    public boolean canMoveRight()
-    {
-        boolean canMoveRight = true;
-        
-        //check if hit against RIGHT side of platform
-        int imageWidth = getImage().getWidth();
-        int imageHeight = getImage().getHeight();
-        if(getOneObjectAtOffset((imageWidth/2)+3, imageHeight/-2, Brick.class) != null || getOneObjectAtOffset((imageWidth/2)+3, (imageHeight/2)-1, Brick.class) != null)
-        {
-            canMoveRight = false;
-        }
-        
-        return canMoveRight;
-    }
-    */
 }

@@ -1,18 +1,23 @@
 #BlueJ class context
 comment0.target=Red
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Mario\ here.\r\n\ \r\n\ @author\ Samantha\ Ly\r\n\ @version\ May-June\ 2022\r\n
+comment0.text=\r\n\ The\ Mario\ class\ is\ the\ character\ played\ by\ the\ player\r\n\ \r\n\ @author\ Samantha\ Ly\r\n\ @version\ May-June\ 2022\r\n
 comment1.params=
 comment1.target=Red()
 comment2.params=
-comment2.target=void\ animateRun()
+comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ act()
+comment3.target=void\ animateRun()
+comment3.text=\r\n\ This\ method\ animates\ the\ character\ when\ running\r\n
 comment4.params=
 comment4.target=void\ move()
+comment4.text=\r\n\ This\ method\ holds\ the\ controls\ for\ moving\ the\ character\r\n
 comment5.params=
 comment5.target=void\ fall()
+comment5.text=\r\n\ This\ method\ makes\ the\ character\ fall\ when\ they\ are\ above\ the\ ground\ and\ accompanies\ the\ jump\ method\r\n
 comment6.params=
 comment6.target=void\ jump()
+comment6.text=\r\n\ This\ method\ allows\ for\ the\ player\ to\ jump\r\n
 comment7.params=
 comment7.target=boolean\ isOnSolidGround()
+comment7.text=\r\n\ This\ method\ checks\ if\ the\ character\ is\ on\ solid\ ground\r\n
 numComments=8
