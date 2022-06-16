@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    GreenfootSound bgMusic = new GreenfootSound("sounds/theme song.mp3");
+    
     private static int timeLeft = 2000;
     public static int score = 0;
     public static int coins = 0;
@@ -18,6 +20,9 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        //Greenfoot.playSound("sounds/theme song.mp3");
+        bgMusic.playLoop();
+        bgMusic.setVolume(40);
 
         prepare();
         
@@ -26,13 +31,14 @@ public class MyWorld extends World
 
     public void act()
     {
-        showText("Score: " + score, 50, 25);
+        showText("Score: " + score, 150, 25);
         
         timeLeft--;
-        showText("TIME: " + timeLeft, 60, 50);
+        showText("TIME: " + timeLeft, 450, 25);
         
         if(timeLeft==0)
         {
+            bgMusic.stop();
             FinishWorld finish = new FinishWorld();
             Greenfoot.setWorld(finish);
         }

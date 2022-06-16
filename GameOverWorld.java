@@ -16,8 +16,8 @@ public class GameOverWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-
-        // character drops down, total coins, mushrooms evaded, score
+        Greenfoot.playSound("sounds/death sound.mp3");
+        
         RedDead redDead = new RedDead();
         addObject(redDead,300,1);
     }

@@ -46,12 +46,14 @@ public class Red extends Actor
         fall();
         if(Greenfoot.isKeyDown("space") && isOnSolidGround())
         {
+            Greenfoot.playSound("sounds/jump sound effect.mp3");
             jump();
         }
         
         MyWorld world = (MyWorld) getWorld();
         if(isTouching(Coin.class))
         {
+            Greenfoot.playSound("sounds/coin sound effect.mp3");
             removeTouching(Coin.class);
             world.spawnCoin();
             world.score += 10;
@@ -61,6 +63,7 @@ public class Red extends Actor
         // gets hit by mushroom
         if(isTouching(Mushroom.class))
         {
+            world.bgMusic.stop();
             GameOverWorld gameOver = new GameOverWorld();
             Greenfoot.setWorld(gameOver);
         }
