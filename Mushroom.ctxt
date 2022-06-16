@@ -5,6 +5,7 @@ comment1.params=
 comment1.target=Mushroom()
 comment2.params=
 comment2.target=void\ animateWalk()
+comment2.text=\r\n\ This\ method\ animates\ the\ mushroom's\ walking\r\n
 comment3.params=
 comment3.target=void\ act()
 numComments=4

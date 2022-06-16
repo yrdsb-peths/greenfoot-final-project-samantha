@@ -12,7 +12,6 @@ public class Mushroom extends Actor
     
     public Mushroom()
     {
-        //walkImages = new GreenfootImage[2];
         for(int i=0; i<walk.length; i++)
         {
             walk[i] = new GreenfootImage("images/mushroom/mushroom" + i + ".png");
@@ -22,6 +21,9 @@ public class Mushroom extends Actor
     }
     
     int curIndex = 0;
+    /**
+     * This method animates the mushroom's walking
+     */
     public void animateWalk()
     {
         setImage(walk[curIndex]);
@@ -38,10 +40,8 @@ public class Mushroom extends Actor
         animateWalk();
         
         /*
-         * adjustments to make it look like the mushroom is
-         * walking at a constant speed because the moving
-         * background creates the illusion that the
-         * mushroom's speed changes
+         * adjustments to make it look like the mushroom is walking at a constant speed
+         * because the moving background creates the illusion that the mushroom's speed changes
          */
         if(Greenfoot.isKeyDown("left"))
         {
@@ -57,6 +57,8 @@ public class Mushroom extends Actor
         {
             world.removeObject(this);
             world.spawnMushroom();
+            world.score += 5;
+            world.mushrooms++;
         }
     }
 }

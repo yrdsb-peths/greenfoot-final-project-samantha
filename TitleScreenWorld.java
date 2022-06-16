@@ -39,9 +39,7 @@ public class TitleScreenWorld extends World
     {
         if(Greenfoot.isKeyDown("enter"))
         {
-            // FOR WHEN I'M STILL WORKING ON THE WORLDS
-            MyWorld world = new MyWorld();
-            //CharacterSelectionWorld world = new CharacterSelectionWorld();
+            InstructionsWorld world = new InstructionsWorld();
             Greenfoot.setWorld(world);
         }
     }

@@ -8,8 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Red extends Actor
 {
-    public boolean alive = true;
-    
     // for running animation
     GreenfootImage[] runRight = new GreenfootImage[6];
     GreenfootImage[] runLeft = new GreenfootImage[6];
@@ -46,23 +44,25 @@ public class Red extends Actor
         move();
         
         fall();
-        if(alive && Greenfoot.isKeyDown("space") && isOnSolidGround())
+        if(Greenfoot.isKeyDown("space") && isOnSolidGround())
         {
             jump();
         }
         
-        MyWorld world = new MyWorld();
+        MyWorld world = (MyWorld) getWorld();
         if(isTouching(Coin.class))
         {
             removeTouching(Coin.class);
-            world.score += 5;
+            world.spawnCoin();
+            world.score += 10;
+            world.coins++;
         }
         
         // gets hit by mushroom
         if(isTouching(Mushroom.class))
         {
-            alive = false;
-            setImage("images/RedDead.png");
+            GameOverWorld gameOver = new GameOverWorld();
+            Greenfoot.setWorld(gameOver);
         }
     }
 
@@ -88,13 +88,13 @@ public class Red extends Actor
      */
     public void move()
     {
-        if(alive && Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("left"))
         {
             isFacingRight = false;
             move(-3);
             animateRun();
         }
-        else if(alive && Greenfoot.isKeyDown("right"))
+        else if(Greenfoot.isKeyDown("right"))
         {
             isFacingRight = true;
             move(3);

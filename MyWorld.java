@@ -8,8 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    private static int timeLeft = 1000;
+    private static int timeLeft = 2000;
     public static int score = 0;
+    public static int coins = 0;
+    public static int mushrooms = 0;
 
     // constructor
     public MyWorld()
@@ -17,7 +19,6 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
 
-        //score = 0;
         prepare();
         
         spawnMushroom();
@@ -28,13 +29,13 @@ public class MyWorld extends World
         showText("Score: " + score, 50, 25);
         
         timeLeft--;
-        showText("TIME: " + timeLeft, 50, 50);
-        /*
-        if(timeLeft<=0)
+        showText("TIME: " + timeLeft, 60, 50);
+        
+        if(timeLeft==0)
         {
-            Greenfoot.stop();
+            FinishWorld finish = new FinishWorld();
+            Greenfoot.setWorld(finish);
         }
-        */
     }
     
     /**
@@ -46,6 +47,14 @@ public class MyWorld extends World
         int y = 334; 
         Mushroom mushroom = new Mushroom();
         addObject(mushroom, x, y);
+    }
+    
+    public void spawnCoin()
+    {
+        int x = Greenfoot.getRandomNumber(590)+10;
+        int y = 334; // on the ground
+        Coin coin = new Coin();
+        addObject(coin, x, y);
     }
     
     /**
@@ -88,5 +97,10 @@ public class MyWorld extends World
         // character
         Red red = new Red();
         addObject(red, 300, 330);
+        
+        // reset progress
+        score = 0;
+        timeLeft = 2000;
+        coins = 0;
     }
 }

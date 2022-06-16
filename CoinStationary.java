@@ -1,23 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class CharSelectRed here.
+ * Write a description of class CoinStationary here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CharSelectRed extends Actor
+public class CoinStationary extends Actor
 {
-    private GreenfootImage red;
+    private GreenfootImage coin;
     
-    public CharSelectRed()
+    public CoinStationary()
     {
-        red = getImage();
-        red.scale(100,70);
+        coin = getImage();
+        coin.scale(17,20);
     }
     
     /**
-     * Act - do whatever the CharSelectRed wants to do. This method is called whenever
+     * Act - do whatever the CoinStationary wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
