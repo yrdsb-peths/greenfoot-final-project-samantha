@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class InstructionsWorld here.
+ * The instructions for the game will be shown in this world.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Samantha Ly
+ * @version June 2022
  */
 public class InstructionsWorld extends World
 {

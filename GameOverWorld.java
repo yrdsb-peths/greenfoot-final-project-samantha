@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameOverWorld here.
+ * The player will be brought to this world when they lose by touching a mushroom.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Samantha Ly 
+ * @version June 2022
  */
 public class GameOverWorld extends World
 {

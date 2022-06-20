@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The double bush in the backgroudn
+ * The double bush in the background
  * 
  * @author Samantha Ly
  * @version June 2022

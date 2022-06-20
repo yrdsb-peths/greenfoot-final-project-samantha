@@ -50,6 +50,7 @@ public class Red extends Actor
             jump();
         }
         
+        // collects coin
         MyWorld world = (MyWorld) getWorld();
         if(isTouching(Coin.class))
         {

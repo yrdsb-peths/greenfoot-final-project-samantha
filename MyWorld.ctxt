@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MyWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ Samantha\ Ly\r\n\ @version\ May-June\ 2022\r\n
+comment0.text=\r\n\ In\ this\ world\ is\ where\ the\ player\ will\ play\ the\ game.\r\n\ \r\n\ @author\ Samantha\ Ly\r\n\ @version\ May-June\ 2022\r\n
 comment1.params=
 comment1.target=MyWorld()
 comment2.params=
@@ -10,7 +10,8 @@ comment3.target=void\ spawnMushroom()
 comment3.text=\r\n\ This\ method\ spawns\ a\ mushroom\ at\ the\ right\ end\ of\ the\ screen\r\n
 comment4.params=
 comment4.target=void\ spawnCoin()
+comment4.text=\r\n\ This\ method\ spawns\ a\ coin\ at\ a\ random\ x\ coordinate\r\n
 comment5.params=
 comment5.target=void\ prepare()
-comment5.text=\r\n\ This\ method\ prepares\ the\ scenery\ of\ the\ game\r\n
+comment5.text=\r\n\ This\ method\ prepares\ the\ game\r\n
 numComments=6

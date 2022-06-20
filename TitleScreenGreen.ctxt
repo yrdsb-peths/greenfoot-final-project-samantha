@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=TitleScreenGreen
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ TitleScreenGreen\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ green\ character\ on\ the\ title\ screen\ that\ is\ for\ decoration\r\n\ \r\n\ @author\ Samantha\ Ly\r\n\ @version\ May\ 2022\r\n
 comment1.params=
 comment1.target=TitleScreenGreen()
 comment2.params=

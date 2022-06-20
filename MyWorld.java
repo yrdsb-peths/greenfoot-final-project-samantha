@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * In this world is where the player will play the game.
  * 
  * @author Samantha Ly
  * @version May-June 2022
@@ -55,6 +55,9 @@ public class MyWorld extends World
         addObject(mushroom, x, y);
     }
     
+    /**
+     * This method spawns a coin at a random x coordinate
+     */
     public void spawnCoin()
     {
         int x = Greenfoot.getRandomNumber(590)+10;
@@ -64,7 +67,7 @@ public class MyWorld extends World
     }
     
     /**
-     * This method prepares the scenery of the game
+     * This method prepares the game
      */
     private void prepare() // put the prepare method at the bottom because it's really long
     {

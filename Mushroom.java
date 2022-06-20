@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Mushroom here.
+ * The mushroom that the player tries to avoid
  * 
  * @author Samantha Ly
  * @version June 2022
@@ -52,6 +52,7 @@ public class Mushroom extends Actor
             setLocation(x-5,y);
         }
         
+        // if player successfully evades mushroom
         MyWorld world = (MyWorld) getWorld();
         if(getX() < 5)
         {

@@ -1,9 +1,6 @@
 #BlueJ class context
 comment0.target=CoinStationary
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ CoinStationary\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ This\ is\ the\ animated\ coin\ shown\ after\ the\ game\ ends\r\n\ \r\n\ @author\ Samantha\ Ly\r\n\ @version\ June\ 2022\r\n
 comment1.params=
 comment1.target=CoinStationary()
-comment2.params=
-comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ CoinStationary\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=3
+numComments=2

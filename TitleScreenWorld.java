@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreenWorld here.
+ * This is the first screen shown to the player
  * 
  * @author Samantha Ly
  * @version June 2022

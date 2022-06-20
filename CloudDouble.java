@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The double clouds in the sky
+ * The double clouds in the background
  * 
  * @author Samantha Ly
  * @version June 2022

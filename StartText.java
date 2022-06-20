@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class StartText here.
+ * The instructions for starting the game that is shown on the title screen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Samantha Ly
+ * @version May 2022
  */
 public class StartText extends Actor
 {

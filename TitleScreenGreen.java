@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreenGreen here.
+ * The green character on the title screen that is for decoration
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Samantha Ly
+ * @version May 2022
  */
 public class TitleScreenGreen extends Actor
 {

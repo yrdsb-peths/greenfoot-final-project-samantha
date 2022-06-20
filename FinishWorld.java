@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class FinishWorld here.
+ * The player will be brought to this world when they survive until the timer ends.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Samantha Ly 
+ * @version June 2022
  */
 public class FinishWorld extends World
 {

@@ -10,7 +10,7 @@ public class Coin extends Actor
 {
     private GreenfootImage[] spin;
     int curIndex = 0;
-    private SimpleTimer timer;
+    //private SimpleTimer timer;
     
     public Coin()
     {
@@ -21,8 +21,8 @@ public class Coin extends Actor
             spin[i].scale(17,20);
         }
         setImage(spin[0]);
-        timer = new SimpleTimer();
-        timer.mark();
+        //timer = new SimpleTimer();
+        //timer.mark();
     }
     
     /**
@@ -33,7 +33,7 @@ public class Coin extends Actor
         setImage(spin[curIndex]);
         curIndex++;
         curIndex %= spin.length;
-        timer.mark();
+        //timer.mark();
     }
     
     /**
